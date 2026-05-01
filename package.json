@@ -1,6 +1,6 @@
 {
   "name": "@superlayzer/widget-ui",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Design system for building Layzer MCP App widgets — a fork of @openai/apps-sdk-ui",
   "license": "MIT",
   "homepage": "https://github.com/superlayzer/widget-ui#readme",
