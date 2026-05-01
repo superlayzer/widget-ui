@@ -18,10 +18,10 @@ import clsx from "clsx"
 import { useEscCloseStack } from "../../hooks/useEscCloseStack"
 import { useLatestValue } from "../../hooks/useLatestValue"
 import { preventDefaultHandler, toCssVariables } from "../../lib/helpers"
-import { useLinkComponent } from "../AppsSDKUIProvider/internal"
 import { Button } from "../Button"
 import { Check, ChevronRight } from "../Icon"
 import { TransitionGroup } from "../Transition"
+import { useLinkComponent } from "../WidgetUIProvider/internal"
 import s from "./Menu.module.css"
 
 type MenuContextValue = {
@@ -180,7 +180,7 @@ type MenuLinkProps = Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href" 
 
 type MenuLink = <
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  T extends ComponentType<any> | "a" = AppsSDKUI.LinkComponent,
+  T extends ComponentType<any> | "a" = WidgetUI.LinkComponent,
 >(
   props: Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href"> &
     MenuLinkProps & {
@@ -196,7 +196,7 @@ type MenuLink = <
 ) => ReactNode
 
 const Link = ((
-  props: MenuLinkProps & { href?: string; to?: string; as?: AppsSDKUI.LinkComponent },
+  props: MenuLinkProps & { href?: string; to?: string; as?: WidgetUI.LinkComponent },
 ) => {
   const { className, children, href, to, disabled, as: OverrideComponent, ...restProps } = props
   const { open } = useMenuContext()

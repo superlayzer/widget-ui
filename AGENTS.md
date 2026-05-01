@@ -1,9 +1,9 @@
-# Contribution guide for Apps SDK UI
+# Contribution guide for Widget UI
 
-Apps SDK UI is a design system tailored for building apps in ChatGPT. Apps SDK UI provides styling foundations, CSS variable design tokens, and a library of well-crafted, accessible components.
+Widget UI (`@layzer/widget-ui`) is a design system for building widgets that run inside Layzer's MCP App sandbox — a Layzer-maintained fork of [`@openai/apps-sdk-ui`](https://github.com/openai/apps-sdk-ui). Widget UI provides styling foundations, CSS variable design tokens, and a library of well-crafted, accessible components.
 
 - **Design tokens** – defined across colors, typography, spacing, sizing, shadows, surfaces, and more.
-- **Tailwind 4** – fully integrated and pre-configured with Apps SDK UI's design tokens.
+- **Tailwind 4** – fully integrated and pre-configured with Widget UI's design tokens.
 - **Component library** – high-quality components built on top of Radix for consistent accessibility patterns.
 - **Utilities** – helpful tools for handling core concepts like dark mode, responsiveness, and more across React and CSS.
 
@@ -61,7 +61,7 @@ Below is a quick reference of all provided components:
 | **Markdown**           | Render rich formatted content.                                        |
 | **Menu**               | Structured actions in a dropdown list.                                |
 | **Modal**              | Capture focus for essential tasks or details.                         |
-| **AppsSDKUIProvider**  | React provider for shared context (e.g., link component).             |
+| **WidgetUIProvider**   | React provider for shared context (e.g., link component).             |
 | **Popover**            | Generic floating UI utility for contextual actions.                   |
 | **RadioGroup**         | Radio button group selection component.                               |
 | **SegmentedControl**   | Toggle through grouped options.                                       |

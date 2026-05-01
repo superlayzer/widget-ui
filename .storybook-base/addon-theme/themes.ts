@@ -4,9 +4,9 @@ import { type Theme } from "./constants"
 const light = create({
   base: "light",
   // Logo
-  brandTitle: "Apps SDK UI",
-  brandImage: "https://openai.github.io/apps-sdk-ui/logo-storybook.svg",
-  brandUrl: "https://developers.openai.com",
+  brandTitle: "Widget UI",
+  brandImage: "https://superlayzer.github.io/widget-ui/logo-storybook.svg",
+  brandUrl: "https://github.com/superlayzer/widget-ui",
   brandTarget: "_self",
 
   // Typography
@@ -34,9 +34,9 @@ const light = create({
 const dark = create({
   ...themes.dark,
   // Logo
-  brandTitle: "Apps SDK UI",
-  brandImage: "https://openai.github.io/apps-sdk-ui/logo-storybook-dark.svg",
-  brandUrl: "https://platform.openai.com",
+  brandTitle: "Widget UI",
+  brandImage: "https://superlayzer.github.io/widget-ui/logo-storybook-dark.svg",
+  brandUrl: "https://github.com/superlayzer/widget-ui",
   brandTarget: "_self",
 
   // Typography

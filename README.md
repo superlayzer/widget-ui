@@ -1,18 +1,20 @@
-# Apps SDK UI
+# Widget UI
 
-Apps SDK UI is a lightweight, accessible design system for building high-quality ChatGPT apps with the [Apps SDK](https://developers.openai.com/apps-sdk). It provides Tailwind-integrated design tokens, a curated React component library, and utilities optimized for consistent experiences inside ChatGPT.
+`@layzer/widget-ui` is a design system for building widgets that run inside [Layzer](https://layzer.ai)'s MCP App sandbox. It provides Tailwind 4 design tokens, a curated React component library, and utilities optimized for consistent in-iframe widget experiences.
+
+This package is a fork of [`@openai/apps-sdk-ui`](https://github.com/openai/apps-sdk-ui), maintained by Layzer to track upstream while shipping Layzer-specific defaults. See [UPSTREAM.md](./UPSTREAM.md) for the sync workflow and [NOTICE](./NOTICE) for attribution.
 
 ## Features
 
 - **Design tokens** for colors, typography, spacing, sizing, shadows, surfaces, and more.
-- **Tailwind 4 integration** pre-configured with Apps SDK UI's design tokens.
+- **Tailwind 4 integration** pre-configured with Widget UI's design tokens.
 - **Accessible components**, built on Radix primitives with consistent styling.
-- **Utilities** for dark mode, responsive layouts, and ChatGPT-optimized behaviors.
+- **Utilities** for dark mode, responsive layouts, and iframe-friendly behaviors.
 - **Minimal boilerplate** — import styles, wrap with a provider, start building.
 
 ## Prerequisites
 
-Apps SDK UI requires **React 18 or 19** and **Tailwind 4**.
+Widget UI requires **React 19** and **Tailwind 4**.
 
 - React: https://react.dev/learn/installation
 - Tailwind 4: https://tailwindcss.com/docs/installation
@@ -22,7 +24,7 @@ Apps SDK UI requires **React 18 or 19** and **Tailwind 4**.
 ### 1. Install the package
 
 ```bash
-npm install @openai/apps-sdk-ui
+npm install @layzer/widget-ui
 ```
 
 ### 2. Setup styles
@@ -31,11 +33,11 @@ Add the foundation styles and Tailwind layers to the top of your global styleshe
 
 ```css
 @import "tailwindcss";
-@import "@openai/apps-sdk-ui/css";
-/* Required for Tailwind to find class references in Apps SDK UI components. */
-@source "../node_modules/@openai/apps-sdk-ui";
+@import "@layzer/widget-ui/css";
+/* Required for Tailwind to find class references in Widget UI components. */
+@source "../node_modules/@layzer/widget-ui";
 
-/* The rest of your application CSS */
+/* The rest of your widget CSS */
 ```
 
 Then import your stylesheet _before_ rendering any components:
@@ -57,45 +59,45 @@ createRoot(document.getElementById("root")!).render(
 
 ### 3. Configure router (optional)
 
-`<AppsSDKUIProvider>` helps define your default router link component, used in components like `<TextLink>` and `<ButtonLink>`.
+`<WidgetUIProvider>` helps define your default router link component, used in components like `<TextLink>` and `<ButtonLink>`.
 
-This provider is optional - router links can also be [passed directly to components](https://openai.github.io/apps-sdk-ui/?path=/docs/components-textlink--docs#component-level) via the `as` prop.
+This provider is optional — router links can also be passed directly to components via the `as` prop.
 
 ```tsx
 // Must be imported first to ensure Tailwind layers and style foundations are defined before component styles
 import "./main.css"
 
-import { AppsSDKUIProvider } from "@openai/apps-sdk-ui/components/AppsSDKUIProvider"
+import { WidgetUIProvider } from "@layzer/widget-ui/components/WidgetUIProvider"
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import { Link } from "react-router"
 import { App } from "./App"
 
 declare global {
-  interface AppsSDKUIConfig {
+  interface WidgetUIConfig {
     LinkComponent: typeof Link
   }
 }
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <AppsSDKUIProvider linkComponent={Link}>
+    <WidgetUIProvider linkComponent={Link}>
       <App />
-    </AppsSDKUIProvider>
+    </WidgetUIProvider>
   </StrictMode>,
 )
 ```
 
 ### Start building
 
-Your project is now ready to use Apps SDK UI!
+Your widget is now ready to use Widget UI!
 
 Here's an example of a simple reservation card, using Tailwind classes and components.
 
 ```tsx
-import { Badge } from "@openai/apps-sdk-ui/components/Badge"
-import { Button } from "@openai/apps-sdk-ui/components/Button"
-import { Calendar, Invoice, Maps, Members, Phone } from "@openai/apps-sdk-ui/components/Icon"
+import { Badge } from "@layzer/widget-ui/components/Badge"
+import { Button } from "@layzer/widget-ui/components/Button"
+import { Calendar, Invoice, Maps, Members, Phone } from "@layzer/widget-ui/components/Icon"
 
 export function ReservationCard() {
   return (
@@ -141,6 +143,10 @@ export function ReservationCard() {
 }
 ```
 
+## Upstream
+
+This package tracks [openai/apps-sdk-ui](https://github.com/openai/apps-sdk-ui). To merge upstream updates, see [UPSTREAM.md](./UPSTREAM.md).
+
 ## License
 
-[MIT](LICENSE) © OpenAI
+[MIT](LICENSE) © OpenAI (upstream) and Layzer (fork modifications). See [NOTICE](./NOTICE) for attribution details.

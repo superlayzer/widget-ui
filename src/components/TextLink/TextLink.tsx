@@ -2,7 +2,7 @@
 
 import clsx from "clsx"
 import { type ComponentProps, type ComponentType, type ReactNode } from "react"
-import { useLinkComponent } from "../AppsSDKUIProvider/internal"
+import { useLinkComponent } from "../WidgetUIProvider/internal"
 import s from "./TextLink.module.css"
 
 export type TextLinkProps = Omit<
@@ -29,7 +29,7 @@ type MakeOptional<P, K extends keyof P> = Omit<P, K> & Partial<Pick<P, Extract<k
 
 type TextLink = <
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  T extends ComponentType<any> | "a" = AppsSDKUI.LinkComponent,
+  T extends ComponentType<any> | "a" = WidgetUI.LinkComponent,
 >(
   props: Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href"> &
     TextLinkProps & {
@@ -45,7 +45,7 @@ type TextLink = <
 ) => ReactNode
 
 export const TextLink = ((
-  props: TextLinkProps & { href?: string; to?: string; as?: AppsSDKUI.LinkComponent },
+  props: TextLinkProps & { href?: string; to?: string; as?: WidgetUI.LinkComponent },
 ) => {
   const {
     children,

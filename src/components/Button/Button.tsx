@@ -12,9 +12,9 @@ import {
 import { handlePressableMouseEnter } from "../../lib/helpers"
 import { wrapTextNodeSiblings } from "../../lib/renderHelpers"
 import { type ControlSize, type SemanticColors, type Sizes, type Variants } from "../../types"
-import { useLinkComponent } from "../AppsSDKUIProvider/internal"
 import { LoadingIndicator } from "../Indicator"
 import { TransitionGroup } from "../Transition/TransitionGroup"
+import { useLinkComponent } from "../WidgetUIProvider/internal"
 import s from "./Button.module.css"
 
 type CommonProps = {
@@ -183,7 +183,7 @@ export const Button = (props: ButtonProps) => {
 
 type ButtonLink = <
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  T extends ComponentType<any> | "a" = AppsSDKUI.LinkComponent,
+  T extends ComponentType<any> | "a" = WidgetUI.LinkComponent,
 >(
   props: Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href"> &
     CommonProps & {
@@ -210,7 +210,7 @@ export const ButtonLink = ((
       href?: string
       to?: string
       external?: boolean
-      as?: AppsSDKUI.LinkComponent
+      as?: WidgetUI.LinkComponent
     },
 ) => {
   const {

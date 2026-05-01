@@ -4,14 +4,14 @@ import { NextPrev } from "@storybookComponents/NextPrev"
 <Meta title="Overview/Installation" />
 
 <Title>Installation</Title>
-<Subtitle>Quick tutorial for adding Apps SDK UI to your app</Subtitle>
+<Subtitle>Quick tutorial for adding Widget UI to your widget</Subtitle>
 
 
 ## Prerequisites
 
-Apps SDK UI is built on top of React and Tailwind 4. To use Apps SDK UI, you'll need to have both installed in your project, and configured with your build system.
+Widget UI is built on top of React 19 and Tailwind 4. To use Widget UI, you'll need to have both installed in your project and configured with your build system.
 
-- React 18 or 19 ([install guide](https://react.dev/learn/installation))
+- React 19 ([install guide](https://react.dev/learn/installation))
 - Tailwind 4 ([install guide](https://tailwindcss.com/docs/installation))
 
 
@@ -20,7 +20,7 @@ Apps SDK UI is built on top of React and Tailwind 4. To use Apps SDK UI, you'll 
 ### 1. Install the package
 
 ```bash
-npm install @openai/apps-sdk-ui
+npm install @layzer/widget-ui
 ```
 
 ### 2. Setup styles
@@ -29,9 +29,9 @@ Add the foundation styles and Tailwind layers to the top of your global styleshe
 
 ```css
 @import "tailwindcss";
-@import "@openai/apps-sdk-ui/css";
-/* Required for Tailwind to find class references in Apps SDK UI components. */
-@source "../node_modules/@openai/apps-sdk-ui";
+@import "@layzer/widget-ui/css";
+/* Required for Tailwind to find class references in Widget UI components. */
+@source "../node_modules/@layzer/widget-ui";
 
 /* The rest of your application CSS */
 ```
@@ -55,51 +55,51 @@ createRoot(document.getElementById("root")!).render(
 
 ### 3. Configure router (optional)
 
-`<AppsSDKUIProvider>` helps define your default router link component, used in components like `<TextLink>` and `<ButtonLink>`.
+`<WidgetUIProvider>` helps define your default router link component, used in components like `<TextLink>` and `<ButtonLink>`.
 
- This provider is optional - router links can also be [passed directly to components](https://openai.github.io/apps-sdk-ui/?path=/docs/components-textlink--docs#component-level) via the `as` prop.
+ This provider is optional - router links can also be [passed directly to components](https://superlayzer.github.io/widget-ui/?path=/docs/components-textlink--docs#component-level) via the `as` prop.
 
 ```tsx
 // Must be imported first to ensure Tailwind layers and style foundations are defined before component styles
 import "./main.css"
 
-import { AppsSDKUIProvider } from "@openai/apps-sdk-ui/components/AppsSDKUIProvider"
+import { WidgetUIProvider } from "@layzer/widget-ui/components/WidgetUIProvider"
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import { Link } from 'react-router'
 import { App } from "./App"
 
 declare global {
-  interface AppsSDKUIConfig {
+  interface WidgetUIConfig {
     LinkComponent: typeof Link
   }
 }
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <AppsSDKUIProvider linkComponent={Link}>
+    <WidgetUIProvider linkComponent={Link}>
       <App />
-    </AppsSDKUIProvider>
+    </WidgetUIProvider>
   </StrictMode>,
 )
 ```
 
 ### Start building
 
-Your project is now ready to use Apps SDK UI!
+Your widget is now ready to use Widget UI!
 
 Here's an example of a simple reservation card, using Tailwind classes and components.
 
 ```tsx
-import { Badge } from "@openai/apps-sdk-ui/components/Badge"
-import { Button } from "@openai/apps-sdk-ui/components/Button"
+import { Badge } from "@layzer/widget-ui/components/Badge"
+import { Button } from "@layzer/widget-ui/components/Button"
 import {
   Calendar,
   Invoice,
   Maps,
   Members,
   Phone,
-} from "@openai/apps-sdk-ui/components/Icon"
+} from "@layzer/widget-ui/components/Icon"
 
 export function ReservationCard() {
   return (
