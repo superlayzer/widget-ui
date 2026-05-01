@@ -15,7 +15,7 @@ export default function injectBreakpoints(
   { breakpoints },
 ) {
   return {
-    postcssPlugin: "@openai/apps-sdk-ui/components/inject-breakpoints",
+    postcssPlugin: "@layzer/widget-ui/components/inject-breakpoints",
     Once(root) {
       root.walkComments((comment) => {
         // Look for comment containing "@inject_breakpoints"

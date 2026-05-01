@@ -4,7 +4,7 @@ import { NextPrev } from "@storybookComponents/NextPrev"
 <Meta title="Concepts/Responsive design" />
 
 <Title>Responsive design</Title>
-<Subtitle>Build adaptive interfaces with Apps SDK UI</Subtitle>
+<Subtitle>Build adaptive interfaces with Widget UI</Subtitle>
 
 ## Approach
 Styles should be written **mobile-first**, meaning the base styles are applied to all screen sizes. Then, responsive styles are added that take effect at specific breakpoints and *above*.
@@ -12,7 +12,7 @@ Styles should be written **mobile-first**, meaning the base styles are applied t
 In practice this may look like starting with a single column layout, then introducing multiple columns at certain breakpoints, when sufficient screen width is available.
 
 ## Default breakpoints
-Default breakpoints are provided out-of-the-box with Apps SDK UI, and are integrated into Tailwind and React utilities.
+Default breakpoints are provided out-of-the-box with Widget UI, and are integrated into Tailwind and React utilities.
 
 <table>
   <thead>
@@ -83,7 +83,7 @@ Use standard Tailwind paradigms for writing responsive utility classes. See the 
 ### React
 Use our React hook for detecting breakpoints in your components.
 ```tsx
-import { useBreakpoint } from "@openai/apps-sdk-ui/hooks/useBreakpoint";
+import { useBreakpoint } from "@layzer/widget-ui/hooks/useBreakpoint";
 
 function SampleComponent() {
   const isMediumBreakpoint = useBreakpoint("md"); // true or false

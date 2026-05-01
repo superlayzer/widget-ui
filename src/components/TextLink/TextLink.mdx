@@ -18,7 +18,7 @@ import * as TextLinkStories from './TextLink.stories';
 ## Usage
 
 ```jsx
-import { TextLink } from "@openai/apps-sdk-ui/components/TextLink"
+import { TextLink } from "@layzer/widget-ui/components/TextLink"
 ```
 
 <Canvas of={TextLinkStories.Base} />
@@ -77,22 +77,22 @@ To customize the font weight, pass a Tailwind class to the `className` prop.
 
 ```tsx
 // In the root of your App
-import {AppsSDKUIProvider} from "@openai/apps-sdk-ui/components/AppsSDKUIProvider"
+import {WidgetUIProvider} from "@layzer/widget-ui/components/WidgetUIProvider"
 import {Link} from "react-router"
 
 // Set up types 
 declare global {
-  interface AppsSDKUIConfig {
+  interface WidgetUIConfig {
     LinkComponent: typeof Link
   }
 }
 
-// Wrap your app in AppsSDKUIProvider and pass in your router's Link component.
+// Wrap your app in WidgetUIProvider and pass in your router's Link component.
 export function App() {
   return (
-    <AppsSDKUIProvider linkComponent={Link}>
+    <WidgetUIProvider linkComponent={Link}>
       {/* other providers... */}
-    </AppsSDKUIProvider>
+    </WidgetUIProvider>
   )
 }
 

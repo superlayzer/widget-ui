@@ -1,0 +1,19 @@
+@layzer/widget-ui
+=================
+
+This package is a fork of @openai/apps-sdk-ui, distributed under the MIT
+License. See LICENSE for the full license text.
+
+Upstream
+--------
+
+  Repository: https://github.com/openai/apps-sdk-ui
+  License:    MIT (Copyright 2025 OpenAI)
+  Forked at:  d0372353112a659059d6206c04ea155282d0a524
+              ("Merge pull request #41 from openai/codex/pin-github-workflow-refs-20260325-213349")
+
+The fork preserves upstream's MIT license and per-file copyright headers
+where present. Modifications by Layzer are licensed under the same MIT
+terms.
+
+Sync workflow: see UPSTREAM.md.
