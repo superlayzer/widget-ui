@@ -9,7 +9,7 @@ import * as PopoverStories from './Popover.stories';
 
 ## Usage
 ```jsx
-import { Popover } from "@openai/apps-sdk-ui/components/Popover";
+import { Popover } from "@layzer/widget-ui/components/Popover";
 ```
 
 <Canvas of={PopoverStories.Base} />
@@ -55,6 +55,6 @@ You can access `usePopoverController()` controller context from components withi
 <Canvas of={PopoverStories.Controller} />
 
 ### Nesting
-All floating UI components in Apps SDK UI can be infinitely nested by relying on `z-index: auto;` and natural stacking order.
+All floating UI components in Widget UI can be infinitely nested by relying on `z-index: auto;` and natural stacking order.
 
 Additionally, `esc` keypresses are handled independently as a stacking order.

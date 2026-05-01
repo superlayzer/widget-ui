@@ -3,7 +3,7 @@
 import { DocsContainer, type DocsContainerProps } from "@storybook/blocks"
 import { type Decorator } from "@storybook/react"
 import { useEffect, useLayoutEffect, useRef, type PropsWithChildren } from "react"
-import { AppsSDKUIProvider } from "../../src/components/AppsSDKUIProvider"
+import { WidgetUIProvider } from "../../src/components/WidgetUIProvider"
 import { applyDocumentTheme } from "../../src/lib/theme"
 import type { Theme } from "../addon-theme/constants"
 import { THEMES } from "../addon-theme/themes"
@@ -26,11 +26,11 @@ export const WithTheme: Decorator = (Story, context) => {
   return <Story />
 }
 
-export const WithAppsSDKUIContext: Decorator = (Story, { parameters }) => {
+export const WithWidgetUIContext: Decorator = (Story, { parameters }) => {
   return (
-    <AppsSDKUIProvider linkComponent={parameters.linkComponent ?? "a"}>
+    <WidgetUIProvider linkComponent={parameters.linkComponent ?? "a"}>
       <Story />
-    </AppsSDKUIProvider>
+    </WidgetUIProvider>
   )
 }
 

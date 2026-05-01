@@ -5,14 +5,14 @@ declare global {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-  interface AppsSDKUIOverrides {}
+  interface WidgetUIOverrides {}
 
   // Utility type to merge defaults with overrides. The override keys take precedence.
   type MergeOverrides<Defaults, Overrides> = Omit<Defaults, keyof Overrides> & Overrides
 
-  type Config = MergeOverrides<DefaultConfig, AppsSDKUIOverrides>
+  type Config = MergeOverrides<DefaultConfig, WidgetUIOverrides>
 
-  namespace AppsSDKUI {
+  namespace WidgetUI {
     export type LinkComponent = Config["LinkComponent"]
     export type Breakpoint = Config["Breakpoint"]
   }
