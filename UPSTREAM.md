@@ -1,6 +1,6 @@
 # Upstream sync
 
-`@layzer/widget-ui` is a fork of [`openai/apps-sdk-ui`](https://github.com/openai/apps-sdk-ui). The upstream repo is wired up as a git remote so we can pull updates mechanically.
+`@superlayzer/widget-ui` is a fork of [`openai/apps-sdk-ui`](https://github.com/openai/apps-sdk-ui). The upstream repo is wired up as a git remote so we can pull updates mechanically.
 
 ## One-time setup
 
@@ -49,12 +49,12 @@ The fork-specific changes that will conflict on every sync are concentrated in a
 | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | `package.json`                                  | `name`, `version`, `description`, `repository`, `homepage`, `bugs`, `author`, `keywords`, `peerDependencies.react`, `publishConfig`  |
 | `package-lock.json`                             | Regenerate with `npm install` after resolving `package.json`                                                                         |
-| `README.md`                                     | Layzer-flavored intro, attribution, `@layzer/widget-ui` import paths                                                                 |
+| `README.md`                                     | Layzer-flavored intro, attribution, `@superlayzer/widget-ui` import paths                                                            |
 | `NOTICE`                                        | Update the "Forked at" SHA to the new merge base                                                                                     |
 | `UPSTREAM.md`                                   | This file — usually no change needed                                                                                                 |
 | `src/components/WidgetUIProvider/**`            | Renamed from upstream's `AppsSDKUIProvider/`. Keep the rename.                                                                       |
 | `src/global.d.ts`                               | `WidgetUI` namespace, `WidgetUIOverrides` interface                                                                                  |
-| `postcss/*.mjs`                                 | `@layzer/widget-ui/components/...` plugin IDs                                                                                        |
+| `postcss/*.mjs`                                 | `@superlayzer/widget-ui/components/...` plugin IDs                                                                                   |
 | `.storybook-base/addon-theme/themes.ts`         | Layzer brand title/url                                                                                                               |
 | `.storybook-base/addon-title/index.ts`          | `STORYBOOK_TITLE = "Widget UI"`                                                                                                      |
 | `.storybook-base/components/StorybookApp.tsx`   | `WithWidgetUIContext` decorator                                                                                                      |
@@ -66,16 +66,14 @@ If upstream renames `AppsSDKUIProvider` to something else, prefer matching their
 
 ## After a sync
 
-1. Bump version in `package.json` (semver: patch for upstream patch, minor for upstream minor, major for breaking).
-2. Update `NOTICE` with the new merge-base commit SHA: `git rev-parse upstream/main` (run before merging) or use the merge commit SHA after.
-3. Open a PR and let CI run.
-4. After merge, tag and publish:
-   ```bash
-   git tag v$(node -p "require('./package.json').version")
-   git push origin --tags
-   ```
-   The `publish.yml` workflow handles the npm publish.
-5. Smoke-test against Layzer (`servers/mcp-test-server` in `superlayzer/layzer`) before announcing.
+1. Update `NOTICE` with the new merge-base commit SHA: `git rev-parse upstream/main` (run before merging) or use the merge commit SHA after.
+2. Open a PR and let CI run.
+3. After merge, run the **Release** workflow (Actions tab → Release → Run workflow) and pick the appropriate version bump:
+   - `patch` for upstream patch-level changes or fork-only fixes
+   - `minor` for upstream minor releases or new features
+   - `major` for breaking changes (upstream's or ours)
+     The workflow bumps `package.json`, commits to `main`, tags `v<version>`, publishes to npm with provenance, and creates a GitHub Release.
+4. Smoke-test against Layzer (`servers/mcp-test-server` in `superlayzer/layzer`) before announcing.
 
 ## When NOT to sync
 

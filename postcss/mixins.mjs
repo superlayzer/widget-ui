@@ -93,7 +93,7 @@ export default function platformUIMixins(
         },
       },
     }),
-    postcssPlugin: "@layzer/widget-ui/components/postcss-mixins",
+    postcssPlugin: "@superlayzer/widget-ui/components/postcss-mixins",
   }
 }
 

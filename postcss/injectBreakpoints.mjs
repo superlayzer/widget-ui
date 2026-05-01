@@ -15,7 +15,7 @@ export default function injectBreakpoints(
   { breakpoints },
 ) {
   return {
-    postcssPlugin: "@layzer/widget-ui/components/inject-breakpoints",
+    postcssPlugin: "@superlayzer/widget-ui/components/inject-breakpoints",
     Once(root) {
       root.walkComments((comment) => {
         // Look for comment containing "@inject_breakpoints"
