@@ -1,6 +1,6 @@
 # Widget UI
 
-`@layzer/widget-ui` is a design system for building widgets that run inside [Layzer](https://layzer.ai)'s MCP App sandbox. It provides Tailwind 4 design tokens, a curated React component library, and utilities optimized for consistent in-iframe widget experiences.
+`@superlayzer/widget-ui` is a design system for building widgets that run inside [Layzer](https://layzer.ai)'s MCP App sandbox. It provides Tailwind 4 design tokens, a curated React component library, and utilities optimized for consistent in-iframe widget experiences.
 
 This package is a fork of [`@openai/apps-sdk-ui`](https://github.com/openai/apps-sdk-ui), maintained by Layzer to track upstream while shipping Layzer-specific defaults. See [UPSTREAM.md](./UPSTREAM.md) for the sync workflow and [NOTICE](./NOTICE) for attribution.
 
@@ -24,7 +24,7 @@ Widget UI requires **React 19** and **Tailwind 4**.
 ### 1. Install the package
 
 ```bash
-npm install @layzer/widget-ui
+npm install @superlayzer/widget-ui
 ```
 
 ### 2. Setup styles
@@ -33,9 +33,9 @@ Add the foundation styles and Tailwind layers to the top of your global styleshe
 
 ```css
 @import "tailwindcss";
-@import "@layzer/widget-ui/css";
+@import "@superlayzer/widget-ui/css";
 /* Required for Tailwind to find class references in Widget UI components. */
-@source "../node_modules/@layzer/widget-ui";
+@source "../node_modules/@superlayzer/widget-ui";
 
 /* The rest of your widget CSS */
 ```
@@ -67,7 +67,7 @@ This provider is optional — router links can also be passed directly to compon
 // Must be imported first to ensure Tailwind layers and style foundations are defined before component styles
 import "./main.css"
 
-import { WidgetUIProvider } from "@layzer/widget-ui/components/WidgetUIProvider"
+import { WidgetUIProvider } from "@superlayzer/widget-ui/components/WidgetUIProvider"
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import { Link } from "react-router"
@@ -95,9 +95,9 @@ Your widget is now ready to use Widget UI!
 Here's an example of a simple reservation card, using Tailwind classes and components.
 
 ```tsx
-import { Badge } from "@layzer/widget-ui/components/Badge"
-import { Button } from "@layzer/widget-ui/components/Button"
-import { Calendar, Invoice, Maps, Members, Phone } from "@layzer/widget-ui/components/Icon"
+import { Badge } from "@superlayzer/widget-ui/components/Badge"
+import { Button } from "@superlayzer/widget-ui/components/Button"
+import { Calendar, Invoice, Maps, Members, Phone } from "@superlayzer/widget-ui/components/Icon"
 
 export function ReservationCard() {
   return (

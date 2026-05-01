@@ -5,7 +5,7 @@ import valueParser from "postcss-value-parser"
 /** @type {import('postcss').PluginCreator} */
 export default function platformUILightDark() {
   return {
-    postcssPlugin: "@layzer/widget-ui/components/parse-light-dark",
+    postcssPlugin: "@superlayzer/widget-ui/components/parse-light-dark",
     OnceExit(root) {
       const stringifyThemeValue = (tokens, which) =>
         tokens.map((tok) => (tok.isLD ? tok[which] : tok.raw)).join("")

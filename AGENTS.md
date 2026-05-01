@@ -1,6 +1,6 @@
 # Contribution guide for Widget UI
 
-Widget UI (`@layzer/widget-ui`) is a design system for building widgets that run inside Layzer's MCP App sandbox — a Layzer-maintained fork of [`@openai/apps-sdk-ui`](https://github.com/openai/apps-sdk-ui). Widget UI provides styling foundations, CSS variable design tokens, and a library of well-crafted, accessible components.
+Widget UI (`@superlayzer/widget-ui`) is a design system for building widgets that run inside Layzer's MCP App sandbox — a Layzer-maintained fork of [`@openai/apps-sdk-ui`](https://github.com/openai/apps-sdk-ui). Widget UI provides styling foundations, CSS variable design tokens, and a library of well-crafted, accessible components.
 
 - **Design tokens** – defined across colors, typography, spacing, sizing, shadows, surfaces, and more.
 - **Tailwind 4** – fully integrated and pre-configured with Widget UI's design tokens.

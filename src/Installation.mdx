@@ -20,7 +20,7 @@ Widget UI is built on top of React 19 and Tailwind 4. To use Widget UI, you'll n
 ### 1. Install the package
 
 ```bash
-npm install @layzer/widget-ui
+npm install @superlayzer/widget-ui
 ```
 
 ### 2. Setup styles
@@ -29,9 +29,9 @@ Add the foundation styles and Tailwind layers to the top of your global styleshe
 
 ```css
 @import "tailwindcss";
-@import "@layzer/widget-ui/css";
+@import "@superlayzer/widget-ui/css";
 /* Required for Tailwind to find class references in Widget UI components. */
-@source "../node_modules/@layzer/widget-ui";
+@source "../node_modules/@superlayzer/widget-ui";
 
 /* The rest of your application CSS */
 ```
@@ -63,7 +63,7 @@ createRoot(document.getElementById("root")!).render(
 // Must be imported first to ensure Tailwind layers and style foundations are defined before component styles
 import "./main.css"
 
-import { WidgetUIProvider } from "@layzer/widget-ui/components/WidgetUIProvider"
+import { WidgetUIProvider } from "@superlayzer/widget-ui/components/WidgetUIProvider"
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import { Link } from 'react-router'
@@ -91,15 +91,15 @@ Your widget is now ready to use Widget UI!
 Here's an example of a simple reservation card, using Tailwind classes and components.
 
 ```tsx
-import { Badge } from "@layzer/widget-ui/components/Badge"
-import { Button } from "@layzer/widget-ui/components/Button"
+import { Badge } from "@superlayzer/widget-ui/components/Badge"
+import { Button } from "@superlayzer/widget-ui/components/Button"
 import {
   Calendar,
   Invoice,
   Maps,
   Members,
   Phone,
-} from "@layzer/widget-ui/components/Icon"
+} from "@superlayzer/widget-ui/components/Icon"
 
 export function ReservationCard() {
   return (

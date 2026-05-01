@@ -16,7 +16,7 @@ export default function platformUIFunctions() {
         spacing: (value) => `calc(var(--spacing) * ${value})`,
       },
     }),
-    postcssPlugin: "@layzer/widget-ui/components/postcss-functions",
+    postcssPlugin: "@superlayzer/widget-ui/components/postcss-functions",
   }
 }
 
